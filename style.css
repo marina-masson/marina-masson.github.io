@@ -1,8 +1,31 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-body {
-    font-family: 'Roboto', sans-serif;
+/* Réinitialisation des marges et du padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2 {
+/* Style du corps de la page */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ADD8E6; /* Bleu clair */
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+/* Style du titre principal */
+h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+/* Style du sous-titre */
+h2 {
+    font-size: 6em;
+    color: white;
 }
