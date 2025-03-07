@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: space-between; /* Alignement du titre et du menu */
     align-items: center;
+    margin: 0; /* Suppression des marges */
 }
 
 /* Style du titre */
@@ -12,7 +13,7 @@ header h1 {
     margin: 0;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #003366; /* Bleu foncé */
+    color: white; /* Changement de la couleur du texte en blanc */
 }
 
 /* Style de la navigation */
@@ -31,7 +32,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #003366;
+    color: white; /* Changement de la couleur des liens en blanc */
     font-size: 1rem;
     padding: 8px 12px;
     border-radius: 5px;
@@ -40,13 +41,13 @@ nav ul li a {
 
 /* Effet au survol */
 nav ul li a:hover {
-    background-color: rgba(0, 51, 102, 0.1); /* Légère coloration */
+    background-color: rgba(255, 255, 255, 0.2); /* Légère coloration */
 }
 
 /* Style spécifique pour le bouton "Contact" */
 nav ul li:last-child a {
-    background-color: #003366;
-    color: white;
+    background-color: white;
+    color: #003366;
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
@@ -54,5 +55,5 @@ nav ul li:last-child a {
 
 /* Effet au survol du bouton */
 nav ul li:last-child a:hover {
-    background-color: #002244; /* Bleu plus foncé */
+    background-color: #f0f0f0; /* Gris clair au survol */
 }
