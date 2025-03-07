@@ -5,7 +5,15 @@ header {
     display: flex;
     justify-content: space-between; /* Alignement du titre et du menu */
     align-items: center;
-    margin: 0; /* Suppression des marges */
+    margin: 0;
+    width: 100%; /* Assurer que le header prend toute la largeur */
+    position: relative;
+}
+
+/* Suppression des marges du body pour éviter les espaces autour du header */
+body {
+    margin: 0;
+    padding: 0;
 }
 
 /* Style du titre */
