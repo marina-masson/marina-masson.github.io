@@ -23,47 +23,7 @@
     <!-- Le footer sera chargé dynamiquement -->
     <div id="footer"></div> 
 
-    <script>
-        /**
-         * Fonction pour inclure un fichier HTML dans un élément spécifique de la page
-         * @param {string} file - Le fichier HTML à charger
-         * @param {string} elementId - L'ID de l'élément dans lequel charger le fichier
-         */
-        async function includeHTML(file, elementId) {
-            try {
-                const response = await fetch(file);
-                if (!response.ok) throw new Error(`Erreur de chargement : ${file}`);
-                
-                const content = await response.text();
-                document.getElementById(elementId).innerHTML = content;
-    
-                // Vérifier si le header est chargé, puis appliquer la classe active
-                if (elementId === 'header') {
-                    applyActiveClass();
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-    
-        // Chargement du header et du footer dynamiquement
-        includeHTML('header.html', 'header');
-        includeHTML('footer.html', 'footer');
-    
-        /**
-         * Fonction qui applique la classe "active" au lien correspondant à la page actuelle
-         */
-        function applyActiveClass() {
-            let links = document.querySelectorAll("nav ul li a");
-            let currentPage = window.location.pathname.split("/").pop(); // Récupère le fichier actuel (ex: "parcours.html")
-    
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active"); // Ajoute la classe active au lien correspondant
-                }
-            });
-        }
-    </script>    
+    <script src="script.js"></script>
 </body>
 
 </html>
