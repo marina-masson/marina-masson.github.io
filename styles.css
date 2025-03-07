@@ -1,9 +1,9 @@
 /* Importation de la police Aurora */
 @font-face {
     font-family: 'Aurora';
-    src: url('/Fonts/Aurora.woff2') format('woff2'),
-         url('/Fonts/Aurora.woff') format('woff'),
-         url('/Fonts/Aurora.otf') format('opentype');
+    src: url('Fonts/Aurora.woff2') format('woff2'),
+         url('Fonts/Aurora.woff') format('woff'),
+         url('Fonts/Aurora.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
