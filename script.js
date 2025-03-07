@@ -15,7 +15,7 @@ async function includeHTML(file, elementId) {
         if (elementId === 'header') {
             console.log("✔ Header chargé dynamiquement");
             applyActiveClass();
-            setupHeaderScroll(); // Initialiser l'animation du header après le chargement
+            setupHeaderScroll(); // Initialiser l'animation du header après le chargement 
         }
     } catch (error) {
         console.error(error);
