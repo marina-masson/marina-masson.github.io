@@ -6,7 +6,7 @@
          url('fonts/Aurora.otf') format('opentype'); /* En dernier recours */
     font-weight: normal;
     font-style: normal;
-}
+} 
 
 /* Réinitialisation globale des styles */
 * {
