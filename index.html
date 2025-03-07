@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marina Masson - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers la feuille de styles -->
-</head>
+
+<script>
+    async function includeHTML(file, elementId) {
+        const response = await fetch(file);
+        const content = await response.text();
+        document.getElementById(elementId).innerHTML = content;
+    }
+
+    includeHTML('header.html', 'header');
+    includeHTML('footer.html', 'footer');
+</script>
 <body>
-    <header>
-        <h1>Marina Masson</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="parcours.html">Parcours</a></li>
-                <li><a href="competences.html">Compétences</a></li>
-                <li><a href="experiences.html">Expériences</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div> <!-- Le header sera chargé ici -->
     
     <main>
-        <!-- Contenu spécifique à chaque page -->
+        <h2>Mon Parcours</h2>
+        <p>Texte spécifique à cette page.</p>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 Marina Masson - Tous droits réservés</p>
-    </footer>
+
+    <div id="footer"></div> <!-- Le footer sera chargé ici -->
 </body>
-</html>
