@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Aurora';
+    src: url('fonts/Aurora.woff2') format('woff2'),
+         url('fonts/Aurora.woff') format('woff'),
+         url('fonts/Aurora.otf') format('opentype'); /* En dernier recours */
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Réinitialisation des marges et paddings */
 * {
     margin: 0;
@@ -31,7 +40,8 @@ header {
 
 /* Style du titre */
 header h1 {
-    font-size: 1.8rem;
+    font-family: 'Aurora', sans-serif;
+    font-size: 2rem;
     font-weight: normal; /* Texte plus fin */
     color: black;
 }
@@ -62,10 +72,12 @@ nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
+    font-family: 'Aurora', sans-serif;
     padding: 8px 12px;
+    letter-spacing: 0.5px; /* Ajuste la valeur si besoin */
     border-radius: 5px;
     transition: 0.3s;
-}
+    }
 
 /* Effet au survol */
 nav ul li a:hover {
@@ -78,17 +90,17 @@ nav ul li a:hover {
 }
 
 .contact a {
-    background-color: black;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: bold;
+    background-color: #add8e6; /* Bleu clair */
+    color: black; /* Texte en noir pour plus de contraste */
+    padding: 8px 25px; /* Plus fin et allongé */
+    border-radius: 30px; /* Forme plus ovale et élégante */
     text-decoration: none;
     transition: 0.3s;
+    font-family: 'Aurora', sans-serif;
 }
 
 .contact a:hover {
-    background-color: #333; /* Gris foncé au survol */
+    background-color: black; /* Gris foncé au survol */
 }
 
 /* --------- Responsive Design ---------- */
