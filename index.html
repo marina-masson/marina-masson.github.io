@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<script>
-    async function includeHTML(file, elementId) {
-        const response = await fetch(file);
-        const content = await response.text();
-        document.getElementById(elementId).innerHTML = content;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Masson - Accueil</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers ton CSS -->
+</head>
 
-    includeHTML('header.html', 'header');
-    includeHTML('footer.html', 'footer');
-</script>
 <body>
     <div id="header"></div> <!-- Le header sera chargé ici -->
     
@@ -20,4 +17,21 @@
     </main>
 
     <div id="footer"></div> <!-- Le footer sera chargé ici -->
+
+    <script>
+        async function includeHTML(file, elementId) {
+            const response = await fetch(file);
+            if (response.ok) {
+                const content = await response.text();
+                document.getElementById(elementId).innerHTML = content;
+            } else {
+                console.error(`Erreur de chargement : ${file}`);
+            }
+        }
+
+        includeHTML('header.html', 'header');
+        includeHTML('footer.html', 'footer');
+    </script>
 </body>
+
+</html>
