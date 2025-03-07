@@ -1,3 +1,4 @@
+/* Importation de la police Aurora */
 @font-face {
     font-family: 'Aurora';
     src: url('fonts/Aurora.woff2') format('woff2'),
@@ -7,7 +8,7 @@
     font-style: normal;
 }
 
-/* Réinitialisation des marges et paddings */
+/* Réinitialisation globale des styles */
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +18,14 @@
 /* Styles généraux */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-top: 70px; /* Compense la hauteur du header fixe */
+    padding-top: 100px; /* Compense la hauteur du header fixe */
 }
 
-/* Styles pour le header */
+main {
+    margin-bottom: 20px; /* Ajoute un espace sous le contenu */
+}
+
+/* ---------- HEADER ---------- */
 header {
     background-color: white;
     padding: 15px 30px;
@@ -32,78 +35,97 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    border-bottom: 1px solid #ddd; /* Légère séparation */
+    border-bottom: 1px solid #ddd; /* Séparation visuelle */
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Trois colonnes équilibrées */
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
-/* Style du titre */
+/* Style du titre principal */
 header h1 {
     font-family: 'Aurora', sans-serif;
     font-size: 2rem;
-    font-weight: normal; /* Texte plus fin */
+    font-weight: normal;
     color: black;
 }
 
 header h1 a {
-    text-decoration: none; /* Supprime le soulignement */
-    color: inherit; /* Garde la couleur du texte parent */
-    font-weight: inherit; /* Garde l'épaisseur du texte */
+    text-decoration: none;
+    color: inherit;
+    font-weight: inherit;
 }
 
-/* Conteneur de la navigation pour bien centrer les éléments */
+/* Navigation principale */
 nav {
     flex: 1;
     display: flex;
-    justify-content: center; /* Centre la navigation */
-}
-
-/* Style de la navigation */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px; /* Espacement entre les liens */
     justify-content: center;
 }
 
-/* Style des liens */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Style des liens de navigation */
 nav ul li a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
     font-family: 'Aurora', sans-serif;
     padding: 8px 12px;
-    letter-spacing: 0.5px; /* Ajuste la valeur si besoin */
-    border-radius: 5px;
-    transition: 0.3s;
-    }
-
-/* Effet au survol */
-nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Légère coloration */
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
 }
 
-/* Positionnement spécifique du bouton "Contact" */
+/* Animation de la ligne sous les liens */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: calc(100% - 24px);
+    background-color: #add8e6;
+}
+
+/* Positionnement du bouton "Contact" */
 .contact {
-    justify-self: end; /* Aligne le bouton "Contact" à droite */
+    justify-self: end;
 }
 
 .contact a {
-    background-color: #add8e6; /* Bleu clair */
-    color: black; /* Texte en noir pour plus de contraste */
-    padding: 8px 25px; /* Plus fin et allongé */
-    border-radius: 30px; /* Forme plus ovale et élégante */
+    background-color: #add8e6;
+    color: black;
+    padding: 8px 25px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: 0.3s;
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
     font-family: 'Aurora', sans-serif;
+    border: 2px solid transparent;
 }
 
-.contact a:hover {
-    background-color: black; /* Gris foncé au survol */
+/* Effet au survol et activation */
+.contact a:hover,
+.contact a:focus,
+.contact a.active {
+    background-color: lightyellow;
+    color: black;
 }
 
-/* --------- Responsive Design ---------- */
+/* ---------- RESPONSIVE DESIGN ---------- */
 
 /* Menu burger */
 .menu-toggle {
@@ -120,10 +142,9 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-/* Adaptation pour mobile */
 @media (max-width: 768px) {
     nav {
-        justify-content: flex-end; /* Pour que le menu burger soit bien positionné */
+        justify-content: flex-end;
     }
 
     nav ul {
@@ -153,15 +174,14 @@ nav ul li a:hover {
         display: flex;
     }
 
-    /* Affichage du menu lorsqu'il est actif */
     nav.active ul {
         display: flex;
     }
 }
 
-/* Footer */
+/* ---------- FOOTER ---------- */
 footer {
-    background-color: #add8e6; /* Bleu clair */
+    background-color: #add8e6;
     padding: 40px 0;
     text-align: center;
     color: black;
@@ -174,13 +194,11 @@ footer {
     gap: 20px;
 }
 
-/* Nom */
 footer h2 {
     font-size: 1.5rem;
     font-weight: normal;
 }
 
-/* Navigation */
 footer nav ul {
     list-style: none;
     display: flex;
@@ -199,7 +217,7 @@ footer nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Réseaux sociaux */
+/* Icônes des réseaux sociaux */
 .social a i {
     font-size: 30px;
     color: black;
@@ -207,10 +225,9 @@ footer nav ul li a:hover {
 }
 
 .social a i:hover {
-    opacity: 0.7
+    opacity: 0.7;
 }
 
-/* Copyright */
 .copyright {
     margin-top: 20px;
     font-size: 0.9rem;

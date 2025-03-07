@@ -4,35 +4,66 @@
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marina Masson - Accueil</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
+    <title>Marina Masson - Expériences</title>
+    
+    <!-- Lien vers les fichiers CSS -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-    <div id="header"></div> <!-- Le header sera chargé ici -->
+    <!-- Le header sera chargé dynamiquement -->
+    <div id="header"></div> 
     
     <main>
         <h2>Mes expériences</h2>
         <p>Texte spécifique à cette page.</p>
     </main>
 
-    <div id="footer"></div> <!-- Le footer sera chargé ici -->
+    <!-- Le footer sera chargé dynamiquement -->
+    <div id="footer"></div> 
 
     <script>
+        /**
+         * Fonction pour inclure un fichier HTML dans un élément spécifique de la page
+         * @param {string} file - Le fichier HTML à charger
+         * @param {string} elementId - L'ID de l'élément dans lequel charger le fichier
+         */
         async function includeHTML(file, elementId) {
-            const response = await fetch(file);
-            if (response.ok) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error(`Erreur de chargement : ${file}`);
+                
                 const content = await response.text();
                 document.getElementById(elementId).innerHTML = content;
-            } else {
-                console.error(`Erreur de chargement : ${file}`);
+    
+                // Vérifier si le header est chargé, puis appliquer la classe active
+                if (elementId === 'header') {
+                    applyActiveClass();
+                }
+            } catch (error) {
+                console.error(error);
             }
         }
-
+    
+        // Chargement du header et du footer dynamiquement
         includeHTML('header.html', 'header');
         includeHTML('footer.html', 'footer');
-    </script>
+    
+        /**
+         * Fonction qui applique la classe "active" au lien correspondant à la page actuelle
+         */
+        function applyActiveClass() {
+            let links = document.querySelectorAll("nav ul li a, .contact a"); // Inclut aussi le bouton "Contact"
+            let currentPage = window.location.pathname.split("/").pop(); // Récupère le fichier actuel (ex: "experiences.html")
+    
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active"); // Ajoute la classe active au lien correspondant
+                }
+            });
+        }
+    </script>  
 </body>
 
 </html>
