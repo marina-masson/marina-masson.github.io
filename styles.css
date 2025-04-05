@@ -10,7 +10,7 @@
     font-style: normal;
 }
 
-/* Appliquer la police Aurora aux titres */ 
+/* Appliquer la police Aurora aux titres */
 h1, h2, h3 {
     font-family: 'Aurora', 'Georgia', serif;
     font-feature-settings: "liga" 0, "clig" 0;
