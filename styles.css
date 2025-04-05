@@ -1,12 +1,21 @@
+/* ================= GLOBAL ================= */
+
 /* Importation de la police Aurora */
 @font-face {
     font-family: 'Aurora';
-    src: url('Fonts/Aurora.woff2') format('woff2'),
+    src: url('Fonts/') format('woff2'),
          url('Fonts/Aurora.woff') format('woff'),
-         url('Fonts/Aurora.otf') format('opentype');
+         url('Fonts/Aurora.otf') format('opentype'); /* En dernier recours */
     font-weight: normal;
     font-style: normal;
 }
+
+/* Appliquer la police Aurora aux titres */
+h1, h2, h3 {
+    font-family: 'Aurora', 'Georgia', serif;
+    font-feature-settings: "liga" 0, "clig" 0;
+  }
+  
 
 /* Réinitialisation globale des styles */
 * {
@@ -29,7 +38,8 @@ main {
     margin-bottom: 20px; /* Ajoute un espace sous le contenu */
 }
 
-/* ---------- HEADER ---------- */
+/* ================= HEADER ================= */
+
 header {
     background-color: transparent;
     padding: 15px 30px;
@@ -167,62 +177,8 @@ header.scrolled .header-border {
     height: 1px;
 }
 
+/* ================= FOOTER ================= */
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-/* Menu burger */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.menu-toggle div {
-    width: 30px;
-    height: 3px;
-    background-color: black;
-    margin: 5px;
-    transition: 0.3s;
-}
-
-@media (max-width: 768px) {
-    nav {
-        justify-content: flex-end;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        border-top: 1px solid #ddd;
-    }
-
-    nav ul li {
-        padding: 10px 0;
-    }
-
-    .contact {
-        position: absolute;
-        right: 30px;
-        top: 15px;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    nav.active ul {
-        display: flex;
-    }
-}
-
-/* ---------- FOOTER ---------- */
 footer {
     background-color: #5a88bb;
     padding-top: 80px;
@@ -253,6 +209,8 @@ footer h2 {
     font-size: 0.7rem;
     color: #fef7dc; /* Texte copyright en jaune pâle */
 }
+
+/* ================= Homepage ================= */
 
 /* Section HERO (image pleine largeur) */
 .hero {
@@ -309,4 +267,127 @@ footer h2 {
     justify-content: center;
     min-height: 50vh; /* Ajuste la hauteur de l'espace vide */
     text-align: center; /* Centre le texte à l'intérieur */
+}
+
+/* ================= Parcours ================= */
+
+/* ===== HERO IMAGE ===== */
+.hero-image {
+  height: 50vh;
+  background: url('Images/IMG_3116.JPG') center/cover no-repeat;
+}
+
+/* ===== INTRO ===== */
+.intro-parcours {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.intro-parcours h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.intro-parcours p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== TIMELINES PAR ANNÉE ===== */
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+.timeline-line-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #5a88bb;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 2rem;
+  width: 16px;
+  height: 16px;
+  background-color: #5a88bb;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -8px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -8px;
+}
+
+.timeline-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  margin-top: 0.5rem;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.event-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0.2rem 0 0.5rem;
+  font-family: 'Aurora', 'Georgia', serif;
+  font-feature-settings: "liga" 0, "clig" 0;
+}
+
+.event-subtitle {
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.event-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.event-list li {
+  margin-bottom: 0.3rem;
+}
+.timeline-item.left .event-list {
+  text-align: right;
+  list-style-position: inside;
+  padding-left: 0;
 }
