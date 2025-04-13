@@ -2,7 +2,7 @@
 
 /* Importation de la police Aurora */
 @font-face {
-    font-family: 'Aurora';
+    font-family: 'Aurora'; 
     src: url('Fonts/') format('woff2'),
          url('Fonts/Aurora.woff') format('woff'),
          url('Fonts/Aurora.otf') format('opentype'); /* En dernier recours */
