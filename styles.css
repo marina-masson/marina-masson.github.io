@@ -177,6 +177,65 @@ header.scrolled .header-border {
     height: 1px;
 }
 
+/* =================== RESPONSIVE HEADER =================== */
+
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  color: #5a88bb;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr auto 1fr;
+    padding: 15px 20px;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fef7dc;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    z-index: 999;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
 /* ================= FOOTER ================= */
 
 footer {
@@ -269,6 +328,10 @@ footer h2 {
     text-align: center; /* Centre le texte à l'intérieur */
 }
 
+
+
+
+
 /* ================= Parcours ================= */
 
 /* ===== HERO IMAGE ===== */
@@ -300,6 +363,8 @@ footer h2 {
   position: relative;
   width: 100%;
   padding: 5rem 2rem;
+  min-height: 100vh;
+  margin-bottom: 4rem;
 }
 
 .timeline-line-center {
@@ -391,3 +456,217 @@ footer h2 {
   list-style-position: inside;
   padding-left: 0;
 }
+
+/* ==================== RESPONSIVE & ANIMATION TIMELINE ==================== */
+
+/* Mobile : timeline verticale */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .timeline-line-center {
+    left: 8px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 0;
+    right: auto;
+  }
+
+  .timeline-item.left .event-list,
+  .timeline-item.right .event-list {
+    text-align: left;
+    list-style-position: outside;
+  }
+}
+
+/* === ANIMATIONS === */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================= COMPÉTENCES ================= */
+
+.competences-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.competence-block {
+  width: 50%;
+  padding: 4rem 3rem;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.competence-block.left {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.competence-block.right {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bg-cream {
+  background-color: #fef7dc;
+}
+
+.bg-blue {
+  background-color: #5a88bb;
+  color: #fef7dc;
+}
+
+.competence-block h2.event-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: 'Aurora', 'Georgia', serif;
+  font-feature-settings: "liga" 0, "clig" 0;
+  margin-bottom: 2rem;
+}
+
+/* Grille des compétences */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes fixes */
+  gap: 2rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.skill p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Cercle SVG */
+.circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+circle.bg {
+  fill: none;
+  stroke-width: 8;
+  stroke: #ddd;
+}
+
+.bg-cream circle.bg {
+  stroke: #dcdcdc;
+}
+
+.bg-blue circle.bg {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+
+circle.progress {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.bg-cream circle.progress {
+  stroke: #5a88bb;
+}
+
+.bg-blue circle.progress {
+  stroke: #fef7dc;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: currentColor;
+}
+
+/* Footer collé */
+main {
+  margin-bottom: 0;
+}
+
+/* ============== RESPONSIVE EXTRA ============== */
+@media (max-width: 768px) {
+  .competence-block {
+    width: 100%;
+    border: none;
+    padding: 3rem 1rem;
+  }
+
+  .competence-block h2.event-title {
+    font-size: 1.2rem;
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .competences-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Inversion de l’ordre visuel mobile pour garder l’alternance visuelle */
+  .competence-block:nth-child(2n) {
+    order: 1;
+  }
+
+  .competence-block:nth-child(2n-1) {
+    order: 2;
+  }
+}
+
