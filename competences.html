@@ -1,29 +1,340 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marina Masson - Accueil</title>
-    
-    <!-- Lien vers les fichiers CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-</head> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marina Masson - Compétences</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
 
 <body>
-    <!-- Le header sera chargé dynamiquement -->
-    <div id="header"></div> 
-    
+  <div class="page-content">
+    <div id="header"></div>
+
     <main>
-        <h2>Mes compétences</h2>
-        <p>Texte spécifique à cette page.</p>
+      <!-- HERO -->
+      <section class="hero-parcours">
+        <div class="hero-image"></div>
+      </section>
+
+      <section class="intro-parcours">
+        <h1>Mes compétences</h1>
+        <p>Une palette d’outils et de savoir-faire au service de ma créativité.</p>
+      </section>
+
+      <!-- GRILLE -->
+      <section class="competences-grid">
+
+        <!-- GAUCHE : Design graphique & audiovisuel -->
+        <div class="competence-block left bg-cream">
+          <h2 class="event-title">Design graphique & audiovisuel</h2>
+          <div class="skills">
+            <div class="skill">
+              <div class="circle" data-percent="90">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fas fa-paint-brush"></i></div>
+              </div>
+              <p>Photoshop</p>
+            </div>
+            <div class="skill">
+              <div class="circle" data-percent="85">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fas fa-vector-square"></i></div>
+              </div>
+              <p>Illustrator</p>
+            </div>
+            <div class="skill">
+              <div class="circle" data-percent="80">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fas fa-file-invoice"></i></div>
+              </div>
+              <p>InDesign</p>
+            </div>
+            <div class="skill">
+                <div class="circle" data-percent="75">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-scissors"></i></div>
+                </div>
+                <p>CapCut</p>
+              </div>
+              <div class="skill">
+                <div class="circle" data-percent="75">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-video"></i></div>
+                </div>
+                <p>Premiere Pro</p>
+              </div>
+              <div class="skill">
+                <div class="circle" data-percent="65">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-bolt"></i></div>
+                </div>
+                <p>After Effect</p>
+              </div>
+          </div>
+        </div>
+
+        <!-- DROITE : Développement web & UI/UX -->
+        <div class="competence-block right bg-blue">
+          <h2 class="event-title">Développement web & UI/UX</h2>
+          <div class="skills">
+            <div class="skill">
+                <div class="circle" data-percent="85">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fab fa-figma"></i></div>
+                </div>
+                <p>Figma</p>
+              </div>
+              <div class="skill">
+              <div class="circle" data-percent="85">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fab fa-wordpress"></i></div>
+              </div>
+              <p>Wordpress</p>
+            </div>
+            <div class="skill">
+              <div class="circle" data-percent="80">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fas fa-layer-group"></i></div>
+              </div>
+              <p>Elementor</p>
+            </div>
+            <div class="skill">
+              <div class="circle" data-percent="75">
+                <svg viewBox="0 0 100 100">
+                  <circle class="bg" cx="50" cy="50" r="45" />
+                  <circle class="progress" cx="50" cy="50" r="45" />
+                </svg>
+                <div class="icon"><i class="fas fa-cubes"></i></div>
+              </div>
+              <p>JetEngine</p>
+            </div>
+            <div class="skill">
+                <div class="circle" data-percent="70">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
+                </div>
+                <p>Crocoblock</p>
+              </div>
+              <div class="skill">
+                <div class="circle" data-percent="20">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-code"></i></div>
+                </div>
+                <p>HTML / CSS / JS</p>
+              </div>
+          </div>
+        </div>
+
+        <!-- GAUCHE : Outils IA générative -->
+        <div class="competence-block left bg-blue">
+            <h2 class="event-title">Outils IA générative</h2>
+            <div class="skills">
+              <div class="skill">
+                <div class="circle" data-percent="90">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-comments"></i></div>
+                </div>
+                <p>Chat GPT</p>
+              </div>
+              <div class="skill">
+                <div class="circle" data-percent="85">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-image"></i></div>
+                </div>
+                <p>DALL·E</p>
+              </div>
+              <div class="skill">
+                <div class="circle" data-percent="80">
+                  <svg viewBox="0 0 100 100">
+                    <circle class="bg" cx="50" cy="50" r="45" />
+                    <circle class="progress" cx="50" cy="50" r="45" />
+                  </svg>
+                  <div class="icon"><i class="fas fa-brain"></i></div>
+                </div>
+                <p>MidJourney</p>
+              </div>
+              <div class="skill">
+                  <div class="circle" data-percent="80">
+                    <svg viewBox="0 0 100 100">
+                      <circle class="bg" cx="50" cy="50" r="45" />
+                      <circle class="progress" cx="50" cy="50" r="45" />
+                    </svg>
+                    <div class="icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                  </div>
+                  <p>Firefly</p>
+                </div>
+            </div>
+          </div>
+
+    <!-- DROITE : SEO & Analytics -->
+<div class="competence-block right bg-cream">
+    <h2 class="event-title">SEO & Analytics</h2>
+    <div class="skills">
+      <div class="skill">
+          <div class="circle" data-percent="80">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="45" />
+              <circle class="progress" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="icon"><i class="fas fa-search"></i></div>
+          </div>
+          <p>Google Search Engine</p>
+        </div>
+        <div class="skill">
+        <div class="circle" data-percent="75">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+        </div>
+        <p>Google Analytics</p>
+      </div>
+      <div class="skill">
+        <div class="circle" data-percent="85">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-plug"></i></div>
+        </div>
+        <p>RankMath SEO</p>
+      </div>
+      <div class="skill">
+        <div class="circle" data-percent="80">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-tags"></i></div>
+        </div>
+        <p>Optimisation on-page</p>
+      </div>
+    </div>
+  </div>
+
+<!-- GAUCHE : Modélisation & création 3D -->
+<div class="competence-block left bg-cream">
+    <h2 class="event-title">Modélisation & création 3D</h2>
+    <div class="skills">
+      <div class="skill">
+        <div class="circle" data-percent="75">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-cube"></i></div>
+        </div>
+        <p>Fusion 360</p>
+      </div>
+      <div class="skill">
+        <div class="circle" data-percent="70">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-cubes"></i></div>
+        </div>
+        <p>Blender</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAUCHE : Outils bureautiques & langues -->
+<div class="competence-block right bg-blue">
+    <h2 class="event-title">Bureautique</h2>
+    <div class="skills">
+      <div class="skill">
+        <div class="circle" data-percent="90">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-language"></i></div>
+        </div>
+        <p>Anglais niveau C1</p>
+      </div>
+      <div class="skill">
+        <div class="circle" data-percent="90">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-file-word"></i></div>
+        </div>
+        <p>Suite Office 365</p>
+      </div>
+      <div class="skill">
+        <div class="circle" data-percent="85">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="45" />
+            <circle class="progress" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="icon"><i class="fas fa-cloud"></i></div>
+        </div>
+        <p>Suite Google</p>
+      </div>
+      <div class="skill">
+          <div class="circle" data-percent="80">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="45" />
+              <circle class="progress" cx="50" cy="50" r="45" />
+            </svg>
+            <div class="icon"><i class="fas fa-calendar-check"></i></div>
+          </div>
+          <p>Organisation & planification</p>
+        </div>
+    </div>
+  </div>
+  
+      </section>
     </main>
 
-    <!-- Le footer sera chargé dynamiquement -->
-    <div id="footer"></div> 
+    <div id="footer"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
