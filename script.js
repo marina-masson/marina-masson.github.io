@@ -2,7 +2,7 @@
  * Fonction pour inclure un fichier HTML dans un élément spécifique de la page
  * @param {string} file - Le fichier HTML à charger
  * @param {string} elementId - L'ID de l'élément dans lequel charger le fichier
- */
+ */ 
 async function includeHTML(file, elementId) {
     try {
         const response = await fetch(file);
