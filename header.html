@@ -1,19 +1,27 @@
 <header>
-    <!-- Lien du titre vers la page d'accueil -->
+    <!-- Titre -->
     <h1><a href="index.html">Marina Masson</a></h1>
-
-    <!-- Navigation principale -->
-    <nav>
-        <ul>
-            <li><a href="parcours.html">Parcours</a></li>
-            <li><a href="competences.html">Compétences</a></li>
-            <li><a href="experiences.html">Expériences</a></li>
-        </ul>
-    </nav>
-
-    <!-- Lien vers la page de contact -->
-    <div class="contact">
-        <a href="contact.html">Contact</a>
+  
+    <!-- Bouton burger visible en mobile -->
+    <div class="burger" id="burger">
+      <i class="fas fa-bars"></i>
     </div>
+  
+    <!-- Navigation principale -->
+    <nav id="main-nav">
+      <ul>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="experiences.html">Expériences</a></li>
+        <li class="mobile-only"><a href="contact.html">Contact</a></li> <!-- visible en mobile -->
+      </ul>
+    </nav>
+  
+    <!-- Bouton contact (desktop only) -->
+    <div class="contact desktop-only">
+      <a href="contact.html">Contact</a>
+    </div>
+  
     <div class="header-border"></div>
-</header> 
+  </header>
+  
