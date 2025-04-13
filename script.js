@@ -85,3 +85,60 @@ function setupHeaderScroll() {
         }
     }, 100);
 }
+
+// Toggle menu mobile
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("main-nav");
+  
+    if (burger && nav) {
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    }
+  });
+  
+  
+  
+
+document.addEventListener("DOMContentLoaded", function () {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // ne réanime qu'une fois
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+  
+    timelineItems.forEach(item => {
+      observer.observe(item);
+    });
+  });
+  
+
+document.addEventListener("DOMContentLoaded", function () {
+    const circles = document.querySelectorAll(".circle");
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const circle = entry.target;
+          const percent = parseInt(circle.dataset.percent, 10);
+          const progress = circle.querySelector(".progress");
+          const offset = 283 - (283 * percent) / 100;
+          progress.style.strokeDashoffset = offset;
+          observer.unobserve(circle); // ne réanime pas à chaque scroll
+        }
+      });
+    }, { threshold: 0.4 });
+  
+    circles.forEach(circle => {
+      observer.observe(circle);
+    });
+  });
+  
